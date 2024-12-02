@@ -1,0 +1,12 @@
+bicycle,2,801,9,835,57
+bicycle,2,823,24,841,61
+person,1,48,712,79,728
+traffic_light,3,130,159,153,186
+traffic_light,3,9,449,30,470
+vehicles,0,106,282,152,336
+traffic_light,3,135,153,156,177
+bicycle,2,684,3,735,40
+person,1,49,423,86,447
+vehicles,0,834,28,1125,243
+vehicles,0,239,3,503,213
+person,1,513,3,554,33

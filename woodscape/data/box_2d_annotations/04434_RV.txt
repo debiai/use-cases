@@ -1,0 +1,5 @@
+traffic_sign,4,778,243,802,269
+traffic_sign,4,856,201,877,225
+traffic_sign,4,72,355,91,382
+vehicles,0,578,197,751,341
+vehicles,0,916,303,1232,531

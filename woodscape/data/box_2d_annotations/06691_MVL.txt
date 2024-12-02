@@ -1,0 +1,8 @@
+person,1,580,3,672,128
+person,1,180,133,273,237
+traffic_sign,4,189,190,211,212
+traffic_sign,4,183,187,206,210
+traffic_sign,4,180,185,201,207
+traffic_sign,4,179,183,197,204
+vehicles,0,672,3,1093,342
+vehicles,0,211,3,562,194

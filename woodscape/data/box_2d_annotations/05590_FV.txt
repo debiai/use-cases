@@ -1,0 +1,15 @@
+bicycle,2,1045,375,1180,547
+traffic_sign,4,259,275,284,306
+traffic_light,3,740,252,754,281
+traffic_light,3,266,230,288,274
+traffic_sign,4,167,251,193,285
+traffic_sign,4,122,337,151,395
+traffic_light,3,724,248,741,277
+traffic_light,3,53,283,70,332
+vehicles,0,143,349,332,473
+vehicles,0,13,376,161,572
+vehicles,0,485,241,660,412
+vehicles,0,784,319,1062,389
+vehicles,0,671,329,1016,449
+vehicles,0,906,363,975,449
+bicycle,2,929,370,1062,488

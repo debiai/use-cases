@@ -1,0 +1,10 @@
+vehicles,0,23,276,189,545
+vehicles,0,407,13,520,58
+vehicles,0,567,3,739,44
+vehicles,0,732,3,828,42
+vehicles,0,904,53,1004,135
+vehicles,0,997,124,1146,274
+traffic_sign,4,116,850,196,962
+vehicles,0,0,517,209,855
+vehicles,0,799,9,905,78
+vehicles,0,239,128,276,157

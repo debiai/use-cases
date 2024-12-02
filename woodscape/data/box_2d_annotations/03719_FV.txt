@@ -1,0 +1,13 @@
+vehicles,0,1199,441,1280,543
+vehicles,0,1132,429,1191,480
+bicycle,2,657,318,712,373
+vehicles,0,714,318,762,375
+vehicles,0,940,384,981,405
+traffic_sign,4,282,254,314,286
+traffic_sign,4,753,195,822,226
+traffic_sign,4,897,295,918,317
+traffic_sign,4,835,139,888,189
+traffic_sign,4,836,167,888,216
+traffic_sign,4,1131,359,1150,393
+vehicles,0,1028,394,1064,429
+person,1,844,327,869,378

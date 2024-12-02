@@ -1,0 +1,9 @@
+vehicles,0,681,335,724,362
+vehicles,0,843,332,1181,532
+traffic_light,3,776,258,800,301
+traffic_light,3,630,170,650,206
+traffic_sign,4,542,241,567,267
+traffic_light,3,456,206,470,235
+traffic_light,3,361,293,375,328
+vehicles,0,202,327,423,464
+vehicles,0,649,339,682,355

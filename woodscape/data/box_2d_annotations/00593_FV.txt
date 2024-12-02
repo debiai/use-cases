@@ -1,0 +1,11 @@
+vehicles,0,767,338,838,391
+vehicles,0,698,332,761,363
+person,1,914,364,937,397
+traffic_light,3,348,301,365,329
+traffic_light,3,950,249,972,293
+traffic_sign,4,1085,183,1107,252
+traffic_sign,4,937,304,951,336
+traffic_light,3,627,149,646,183
+vehicles,0,527,338,551,360
+person,1,1070,335,1125,470
+person,1,988,306,1041,460

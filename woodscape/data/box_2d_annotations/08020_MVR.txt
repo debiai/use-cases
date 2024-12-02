@@ -1,0 +1,13 @@
+vehicles,0,231,3,474,255
+vehicles,0,763,3,857,46
+vehicles,0,856,28,1074,207
+vehicles,0,144,182,207,300
+vehicles,0,31,400,107,545
+vehicles,0,89,321,116,405
+vehicles,0,455,15,499,41
+vehicles,0,50,649,69,704
+vehicles,0,104,253,159,377
+vehicles,0,520,3,790,137
+vehicles,0,4,523,49,613
+vehicles,0,62,727,87,765
+vehicles,0,83,783,184,936

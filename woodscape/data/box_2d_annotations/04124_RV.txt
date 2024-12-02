@@ -1,0 +1,17 @@
+vehicles,0,899,301,973,338
+vehicles,0,773,265,808,288
+vehicles,0,833,278,867,301
+vehicles,0,1190,463,1276,544
+vehicles,0,614,242,686,295
+vehicles,0,180,302,309,392
+person,1,343,264,377,332
+person,1,492,246,504,288
+person,1,1111,373,1145,439
+traffic_light,3,440,146,457,186
+traffic_light,3,1133,300,1152,330
+traffic_light,3,1149,292,1170,337
+traffic_light,3,1214,393,1235,422
+traffic_light,3,819,120,840,169
+traffic_light,3,842,127,863,172
+traffic_light,3,1145,252,1162,276
+person,1,974,318,989,347

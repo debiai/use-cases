@@ -1,0 +1,7 @@
+traffic_light,3,898,157,927,219
+vehicles,0,32,148,533,565
+traffic_light,3,897,294,912,325
+traffic_sign,4,26,256,109,308
+bicycle,2,814,362,838,412
+person,1,774,285,816,398
+vehicles,0,597,294,727,355
