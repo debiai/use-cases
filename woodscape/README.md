@@ -260,3 +260,7 @@ Let's download the selection as a DataFrame. To do this, run the [debiai_woodsca
 ## Conclusion
 
 In this tutorial, we have learned how to set up DebiAI on our local machine, create a new project, upload the Woodscape dataset, and analyze the dataset to identify biases and errors.
+
+## Going further
+
+The [debiai_woodscape_extra_features](debiai_woodscape_extra_features.ipynb) notebook contains the additional images `contrasts` and `luminance` features that can be explored in DebiAI.

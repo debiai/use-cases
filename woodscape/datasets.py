@@ -21,6 +21,7 @@ box_2d_annotations folder expected content:
 
 
 BOX_2D_ANNOTATIONS_FOLDER_PATH = os.path.join("data", "box_2d_annotations")
+EXTRA_FEATURES_CSV_PATH = os.path.join("data", "features.csv")
 CLASSES = ["vehicles", "person", "bicycle", "traffic_light", "traffic_sign"]
 
 
@@ -96,3 +97,34 @@ def create_woodscape_dataset() -> pd.DataFrame:
         )
 
     return pd.DataFrame(data)
+
+
+def create_woodscape_dataset_extra_features() -> pd.DataFrame:
+    woodscape_df = create_woodscape_dataset()
+
+    # Load extra features
+    extra_features_df = pd.read_csv(EXTRA_FEATURES_CSV_PATH)
+
+    # Rows:
+    # - image_name
+    # - luminance
+    # - contrast
+    # - brisque
+    # - cpbd
+    # - shannon_entropy
+    # - glcm_entropy
+
+    # Merge the two dataframes
+    merged_df = pd.merge(
+        woodscape_df,
+        extra_features_df,
+        left_on="image",
+        right_on="image_name",
+        how="inner",
+    )
+
+    return merged_df
+
+
+if __name__ == "__main__":
+    create_woodscape_dataset_extra_features()
