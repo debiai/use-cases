@@ -4,6 +4,9 @@
 
 <div align="center">
     <img src="images/MetadataAnalysis.png" alt="Metadata Analysis Partners" width="800" style="border-radius: 15px; border: 1px solid #ccc;" />
+    <br>
+    This dataset is available on the <a href="https://demo.debiai.fr/#/">DebiAI demo</a> instance.
+
 </div>
 
 ## About the Challenge
@@ -119,6 +122,9 @@ Your project will be ready to explore!
 
 <div style="text-align: center;">
     <img src="images/parallel_coordinates.png" alt="Parallel Coordinates" style="border-radius: 15px; border: 1px solid;"/>
+    <br>
+    This dataset is available on the <a href="https://demo.debiai.fr/#/">DebiAI demo</a> instance.
+
 </div>
 
 ## Learn more

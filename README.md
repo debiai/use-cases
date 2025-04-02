@@ -6,4 +6,4 @@ Examples of public use cases using DebiAI
 
 - [Woodscape](./woodscape/README.md) (object detection) - **With included complete step by step tutorial!**
 - [Exathlon](./Exathlon/README.md) (time series anomaly detection)
-- [Welding Quality Detection](./weldingQuality/README.md) (image classification)
+- [Welding Quality Detection](./weldingQuality/README.md) (image classification) **Docker Ready!**

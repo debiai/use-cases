@@ -2,3 +2,5 @@ venv/
 __pycache__/
 debiai.log
 otherdata/
+Ifremer/
+weldingQuality/infra/
