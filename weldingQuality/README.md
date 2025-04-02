@@ -1,55 +1,70 @@
-# Welding Quality Detection - Confiance.AI Challenge - Metadata DebiAI analysis
+# Welding Quality Detection - Confiance.AI Challenge
 
-<div style="text-align: center;">
-    <img src="images/MetadataAnalysis.png" alt="Metadata AnalysisPartners" width="800" style="border-radius: 15px; border: 1px solid;"/>
+## Metadata Analysis with DebiAI
+
+<div align="center">
+    <img src="images/MetadataAnalysis.png" alt="Metadata Analysis Partners" width="800" style="border-radius: 15px; border: 1px solid #ccc;" />
 </div>
 
-## [The challenge](https://confianceai.github.io/Welding-Quality-Detection-Challenge/)
+## About the Challenge
 
-The Welding Quality Detection challenge is organized by the Confiance.ai community and IRT SystemX, with the support of Renault Group.
+[Welding Quality Detection Challenge](https://confianceai.github.io/Welding-Quality-Detection-Challenge/)  
+Organized by the **Confiance.ai community** and **IRT SystemX**, with support from the **Renault Group**.
 
-<div style="text-align: center;">
-    <img src="images/partners.png" alt="Partners" width="600" style="border-radius: 15px;"/>
+<div align="center">
+    <img src="images/partners.png" alt="Partners" width="600" style="border-radius: 15px;" />
 </div>
 
-It is part of the European Trustworthy AI Foundation of the Confiance.ai community, positioned as the driving force behind an ambitious European strategy for industrial and responsible AI. Its aim is to propel Europe to the forefront of innovation in trustworthy AI by establishing Confiance.ai's methodologies and tools as an international benchmark.
+This challenge is part of the European Trustworthy AI initiative, led by Confiance.ai.  
+Its mission is to promote **responsible industrial AI** and make Confiance.ai methodologies a European and global benchmark for trustworthy AI.
 
-<div style="text-align: center;">
-    <a href="https://confianceai.github.io/Welding-Quality-Detection-Challenge/">
-        Welding Quality Detection Challenge website
-    </a>
-    /
-    <a href="https://confianceai.github.io/Welding-Quality-Detection-Challenge/docs/dataset/">
-        The dataset page
-    </a>
-</div>
+- [Challenge website](https://confianceai.github.io/Welding-Quality-Detection-Challenge/)
+- [Dataset information](https://confianceai.github.io/Welding-Quality-Detection-Challenge/docs/dataset/)
 
-## [DebiAI](https://debiai.irt-systemx.fr/)
+## What is DebiAI?
 
-DebiAI is an open-source web app designed to simplify machine learning development through data analysis, bias/error identification, model performance comparison, and fast visualization creation / live exploration.
+[DebiAI](https://debiai.irt-systemx.fr/) is an **open-source web app** that simplifies machine learning workflows through:
 
-<div style="text-align: center;">
+- Data exploration & visualization
+- Outliers & bias detection
+- Model results and performance contextual comparison
+- Real-time interaction with your datasets
+
+<div align="center">
     <a href="https://debiai.irt-systemx.fr/">
-        DebiAI website, documentation and tutorials
+        Visit the DebiAI website (docs + tutorials)
     </a>
 </div>
 
-## Analyzing the Welding Quality Detection dataset with DebiAI
+## Analyzing the Welding Dataset with DebiAI
 
-This repository contains a Data-provider ([learn more about DebiAI Data-providers](https://debiai.irt-systemx.fr/dataInsertion/dataProviders/)) for the Welding Detection Challenge Dataset Metadata: [data_provider.py](data_provider.py).
+This repository provides a **Data-provider** for the Welding Detection Challenge Metadata: [`data_provider.py`](data_provider.py)
 
-The Data-provider is used to provide the dataset to DebiAI, allowing you to analyze the dataset and identify biases and errors.
+It allows you to load the dataset into DebiAI for visual analysis and quality checks.  
+Learn more about Data-providers: [DebiAI Data Insertion Guide](https://debiai.irt-systemx.fr/dataInsertion/dataProviders/)
 
-### DebiAI Data-provider python module
+### `debiai_data_provider` Python Module
 
-This Data-provider uses the `debiai_data_provider` python module to provide the dataset. Learn more about the Python module [here](https://github.com/debiai/easy-data-provider).
+The provider is based on [`debiai_data_provider`](https://github.com/debiai/easy-data-provider) – a simple module to serve data to DebiAI.
 
-### Setup
+## Setup Instructions
 
-Run the Data-provider:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/debiai/use-cases.git DebiAI-use-cases
+cd DebiAI-use-cases/weldingQuality
+```
+
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
+```
+
+### 3. Run the Data-provider
+
+```bash
 python data_provider.py
 ```
 
@@ -93,20 +108,24 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 ```
 
-In a new process, start DebiAI with the the url of the Data-provider:
+In a **new terminal**, run:
 
 ```bash
 debiai-gui start -dp http://localhost:8000
 ```
 
-DebiAI will start and open a new tab in your browser with the DebiAI home page. The project will be available to be analyzed.
+A browser tab will open with the DebiAI interface.
+Your project will be ready to explore!
 
 <div style="text-align: center;">
     <img src="images/parallel_coordinates.png" alt="Parallel Coordinates" style="border-radius: 15px; border: 1px solid;"/>
 </div>
 
-Check our [DebiAI Dashboard Guide](https://debiai.irt-systemx.fr/dashboard/), the [Woodscape tutorial](../woodscape/README.md) is also a good way to learn how to use DebiAI.
+## Learn more
 
-## Support
+- [DebiAI Dashboard Guide](https://debiai.irt-systemx.fr/dashboard/)
+- The [Woodscape UseCase tutorial](../woodscape/README.md) is also a good introduction to DebiAI.
+
+## Got questions or feedback?
 
 [Contact](https://debiai.irt-systemx.fr/meta/contact.html#contact)
