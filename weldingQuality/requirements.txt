@@ -1,0 +1,5 @@
+pandas
+pyarrow
+fastparquet
+debiai-gui
+debiai_data_provider
