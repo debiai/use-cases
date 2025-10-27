@@ -48,6 +48,7 @@ class WeldingQualityMetadata(DebiAIProject):
         ).dt.strftime("%Y-%m-%d %H:%M")
 
         self.data = data
+        return self.data
 
     # Project Info
     def get_structure(self) -> dict:
@@ -86,10 +87,8 @@ class WeldingQualityMetadata(DebiAIProject):
         # containing the data corresponding to the samples_ids
         print("ID:", len(samples_ids))
         project_data = self.data.set_index("sample_id")
-        print(project_data)
         data = project_data.loc[samples_ids]
-        print(data)
-        print(len(data))
+        print("Data:", data.shape)
 
         return data
 
