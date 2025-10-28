@@ -4,6 +4,7 @@ from debiai_data_provider import DebiAIProject, DataProvider
 
 
 METADATA_PARQUET_FILE_PATH = "metadata/ds_meta.parquet"
+UNWANTED_COLUMNS = ["sample_id", "sha256"]
 
 
 class WeldingQualityMetadata(DebiAIProject):
@@ -21,12 +22,8 @@ class WeldingQualityMetadata(DebiAIProject):
         if self.data is not None:
             return self.data
 
-        parquet_df = pd.read_parquet(METADATA_PARQUET_FILE_PATH)
-
-        # Convert np.int64 to native Python int
-        data = parquet_df.map(
-            lambda x: int(x) if isinstance(x, (np.integer)) else str(x)
-        )
+        # Load all data, not just first 10 rows
+        data = pd.read_parquet(METADATA_PARQUET_FILE_PATH)
 
         # Ensure the 'timestamp' column is of string type
         data["timestamp"] = data["timestamp"].astype(str)
@@ -47,14 +44,26 @@ class WeldingQualityMetadata(DebiAIProject):
             data["timestamp"], format="%d/%m/%Y %H:%M"
         ).dt.strftime("%Y-%m-%d %H:%M")
 
+        # Convert numpy types to native Python types for API serialization
+        def convert_numpy_types(x):
+            if isinstance(x, np.ndarray):
+                # Convert numpy arrays to lists with native Python types
+                return x.astype(object).tolist()
+            elif isinstance(x, np.integer):
+                return int(x)
+            elif isinstance(x, np.floating):
+                return float(x)
+            elif isinstance(x, np.bool_):
+                return bool(x)
+            return x
+
+        data = data.map(convert_numpy_types)
+
         self.data = data
         return self.data
 
     # Project Info
     def get_structure(self) -> dict:
-        # Load the data from the parquet file
-        UNWANTED_COLUMNS = ["sample_id"]
-
         # Create the structure
         project_structure = {}
 
@@ -62,9 +71,45 @@ class WeldingQualityMetadata(DebiAIProject):
             if col in UNWANTED_COLUMNS:
                 continue
 
+            metrics = {}
+            column_type = "auto"  # default type
+
+            print(f"  Processing: {col} ({self.data[col].dtype})")
+
+            # Determine column type based on content
+            if pd.api.types.is_numeric_dtype(self.data[col]):
+                column_type = "number"
+                # Try to calculate numeric metrics only for numeric columns
+                try:
+                    metrics.update(
+                        {
+                            "min": float(min(self.data[col][0:10])),
+                            "max": float(max(self.data[col][0:10])),
+                            "mean": float(sum(self.data[col][0:10])) / 10,
+                            "average": float(sum(self.data[col][0:10])) / 10,
+                        }
+                    )
+                except (TypeError, ValueError):
+                    pass
+            elif pd.api.types.is_string_dtype(self.data[col]):
+                column_type = "text"
+
+            # Metrics for all column types
+            try:
+                metrics.update(
+                    {
+                        "nbUniqueValues": int(self.data[col].nunique()),
+                        "nbNullValues": int(self.data[col].isnull().sum()),
+                    }
+                )
+            except (TypeError, ValueError) as e:
+                print(f"Error occurred while updating metrics for column {col}: {e}")
+                pass
+
             project_structure[col] = {
                 "category": "context",
-                "type": "auto",
+                "type": column_type,
+                "metrics": metrics,
             }
 
         return project_structure
